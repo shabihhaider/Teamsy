@@ -17,8 +17,7 @@ class DepartmentForm extends Component
         ]);
 
         Department::create([
-            'name' => $this->name,
-            'tenant_id' => Session()->get('tenant_id')
+            'name' => $this->name
         ]);
         $this->success = true;
 
