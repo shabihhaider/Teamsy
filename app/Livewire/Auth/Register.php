@@ -28,7 +28,7 @@ class Register extends Component
     public function register()
     {
         $this->validate([
-            'name' => ['required'],
+            'name' => ['required', 'min:5'],
             'company' => ['required', 'string', 'unique:tenants,name'],
             'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'min:8'],

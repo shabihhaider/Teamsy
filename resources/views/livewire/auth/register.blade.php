@@ -15,46 +15,47 @@
 
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Start your free trial</h2>
         </div>
-        {{$errors}}
+
         <!-- Sign Up Form -->
         <form wire:submit.prevent="register" class="mt-8 space-y-6">
             <div class="rounded-md shadow-sm space-y-4">
                 <!-- Name -->
-                <div>
-                    <label for="name" class="sr-only">Name</label>
-                    <input 
-                        wire:model="name"
-                        id="name" name="name" type="text" required
-                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
-                        placeholder="Name">
-                </div>
+                <x-text-input
+                    wire:model.debounce.100ms="name"
+                    type="text"
+                    label="Name"
+                    :required="true"
+                    placeholder="Enter Name"
+                    class=""
+                />
+                
                 <!-- Company Name -->
-                <div>
-                    <label for="company" class="sr-only">Company Name</label>
-                    <input 
-                        wire:model="company"
-                        id="company" name="company" type="text" required
-                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
-                        placeholder="Company Name">
-                </div>
+                <x-text-input
+                    wire:model.debounce.100ms="company"
+                    type="text"
+                    label="Company"
+                    :required="true"
+                    placeholder="Enter Company Name"
+                    class=""
+                />
                 <!-- Email -->
-                <div>
-                    <label for="email" class="sr-only">Email address</label>
-                    <input 
-                        wire:model="email"
-                        id="email" name="email" type="email" required
-                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
-                        placeholder="Email address">
-                </div>
+                <x-text-input
+                    wire:model.debounce.100ms="email"
+                    type="email"
+                    label="Email"
+                    :required="true"
+                    placeholder="demo12@gmail.com"
+                    class=""
+                />
                 <!-- Password -->
-                <div>
-                    <label for="password" class="sr-only">Password</label>
-                    <input 
-                        wire:model="password"
-                        id="password" name="password" type="password" required
-                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
-                        placeholder="Password">
-                </div>
+                <x-text-input
+                    wire:model.debounce.100ms="password"
+                    type="password"
+                    label="Password"
+                    :required="true"
+                    placeholder="Enter Password"
+                    class=""
+                />
             </div>
 
             <!-- Submit Button -->
